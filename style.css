@@ -22,6 +22,10 @@ body {
   font-family: 'MedievalSharp', serif;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .toolbar {
   display: flex;
   align-items: center;

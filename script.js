@@ -24,6 +24,22 @@ function isDataField(field) {
   return field.id && !field.closest('.modal');
 }
 
+function showModal(modalEl) {
+  modalEl.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+}
+
+function hideModal(modalEl) {
+  modalEl.classList.add('hidden');
+  document.body.classList.remove('modal-open');
+}
+
+function closeOnOverlayClick(modalEl, closeFn) {
+  modalEl.addEventListener('click', (event) => {
+    if (event.target === modalEl) closeFn();
+  });
+}
+
 function loadFieldValues() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 
@@ -71,12 +87,12 @@ function openModal(field) {
   activeField = field;
   modalInput.value = field.value;
   modalNotes.value = fieldNotes[field.id] || '';
-  modal.classList.remove('hidden');
+  showModal(modal);
   modalInput.focus();
 }
 
 function closeModal() {
-  modal.classList.add('hidden');
+  hideModal(modal);
   activeField = null;
 }
 
@@ -105,11 +121,7 @@ modalOk.addEventListener('click', () => {
 
 modalCancel.addEventListener('click', closeModal);
 
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
+closeOnOverlayClick(modal, closeModal);
 
 const textareaModal = document.getElementById('textarea-edit-modal');
 const textareaModalInput = document.getElementById('textarea-edit-modal-input');
@@ -121,12 +133,12 @@ let activeTextarea = null;
 function openTextareaModal(field) {
   activeTextarea = field;
   textareaModalInput.value = field.value;
-  textareaModal.classList.remove('hidden');
+  showModal(textareaModal);
   textareaModalInput.focus();
 }
 
 function closeTextareaModal() {
-  textareaModal.classList.add('hidden');
+  hideModal(textareaModal);
   activeTextarea = null;
 }
 
@@ -140,11 +152,7 @@ textareaModalOk.addEventListener('click', () => {
 
 textareaModalCancel.addEventListener('click', closeTextareaModal);
 
-textareaModal.addEventListener('click', (event) => {
-  if (event.target === textareaModal) {
-    closeTextareaModal();
-  }
-});
+closeOnOverlayClick(textareaModal, closeTextareaModal);
 
 saveButton.addEventListener('click', () => {
   const data = {};
