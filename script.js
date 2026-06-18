@@ -21,7 +21,7 @@ function markClean() {
 }
 
 function isDataField(field) {
-  return field.id && !field.closest('#edit-modal');
+  return field.id && !field.closest('.modal');
 }
 
 function loadFieldValues() {
@@ -84,7 +84,8 @@ fields.forEach((field) => {
   if (!isDataField(field)) return;
 
   if (field.tagName === 'TEXTAREA') {
-    field.addEventListener('input', markDirty);
+    field.readOnly = true;
+    field.addEventListener('click', () => openTextareaModal(field));
   } else if (field.type === 'checkbox') {
     field.addEventListener('change', markDirty);
   } else if (field.type === 'text') {
@@ -107,6 +108,41 @@ modalCancel.addEventListener('click', closeModal);
 modal.addEventListener('click', (event) => {
   if (event.target === modal) {
     closeModal();
+  }
+});
+
+const textareaModal = document.getElementById('textarea-edit-modal');
+const textareaModalInput = document.getElementById('textarea-edit-modal-input');
+const textareaModalOk = document.getElementById('textarea-edit-modal-ok');
+const textareaModalCancel = document.getElementById('textarea-edit-modal-cancel');
+
+let activeTextarea = null;
+
+function openTextareaModal(field) {
+  activeTextarea = field;
+  textareaModalInput.value = field.value;
+  textareaModal.classList.remove('hidden');
+  textareaModalInput.focus();
+}
+
+function closeTextareaModal() {
+  textareaModal.classList.add('hidden');
+  activeTextarea = null;
+}
+
+textareaModalOk.addEventListener('click', () => {
+  if (activeTextarea) {
+    activeTextarea.value = textareaModalInput.value;
+    markDirty();
+  }
+  closeTextareaModal();
+});
+
+textareaModalCancel.addEventListener('click', closeTextareaModal);
+
+textareaModal.addEventListener('click', (event) => {
+  if (event.target === textareaModal) {
+    closeTextareaModal();
   }
 });
 

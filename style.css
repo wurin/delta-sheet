@@ -336,6 +336,11 @@ textarea:disabled {
   padding: 6px;
 }
 
+#textarea-edit-modal .modal-content {
+  width: 90vw;
+  max-width: 600px;
+}
+
 .modal-actions {
   display: flex;
   gap: 8px;
