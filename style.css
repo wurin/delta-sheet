@@ -21,6 +21,11 @@ body {
   font-family: 'MedievalSharp', serif;
 }
 
+#lock-toggle {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
 .character-info,
 .ability-scores,
 .misc-stats,
@@ -241,6 +246,12 @@ input[type="text"] {
 
 input[type="text"]:focus {
   border-bottom-color: #555;
+}
+
+input:disabled,
+textarea:disabled {
+  color: inherit;
+  -webkit-text-fill-color: inherit;
 }
 
 .field-row {
