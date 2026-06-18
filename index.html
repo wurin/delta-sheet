@@ -43,24 +43,40 @@
     <div class="column-left">
       <div class="ability-scores">
         <h2>Ability Scores</h2>
-
-        <input type="text" id="str">
-        <label for="str">Strength</label>
-
-        <input type="text" id="dex">
-        <label for="dex">Dexterity</label>
-
-        <input type="text" id="con">
-        <label for="con">Constitution</label>
-
-        <input type="text" id="int">
-        <label for="int">Intelligence</label>
-
-        <input type="text" id="wis">
-        <label for="wis">Wisdom</label>
-
-        <input type="text" id="cha">
-        <label for="cha">Charisma</label>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="str">
+            <input type="text" id="str-mod" class="mod">
+            <label for="str">Strength</label>
+          </div>
+          <div class="field">
+            <input type="text" id="dex">
+            <input type="text" id="dex-mod" class="mod">
+            <label for="dex">Dexterity</label>
+          </div>
+          <div class="field">
+            <input type="text" id="con">
+            <input type="text" id="con-mod" class="mod">
+            <label for="con">Constitution</label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="int">
+            <input type="text" id="int-mod" class="mod">
+            <label for="int">Intelligence</label>
+          </div>
+          <div class="field">
+            <input type="text" id="wis">
+            <input type="text" id="wis-mod" class="mod">
+            <label for="wis">Wisdom</label>
+          </div>
+          <div class="field">
+            <input type="text" id="cha">
+            <input type="text" id="cha-mod" class="mod">
+            <label for="cha">Charisma</label>
+          </div>
+        </div>
       </div>
 
       <div class="misc-stats">
@@ -307,21 +323,20 @@
 
       <div class="inventory">
         <h2>Inventory</h2>
-        <textarea id="inventory" rows="8"></textarea>
+        <textarea id="inventory" rows="6"></textarea>
       </div>
     </div>
 
     <div class="column-right">
       <div class="features">
         <h2>Features &amp; Traits</h2>
-        <textarea id="features" rows="48"></textarea>
+        <textarea id="features" rows="52"></textarea>
       </div>
 
       <div class="proficiencies">
         <h2>Other Proficiencies &amp; Languages</h2>
         <textarea id="proficiencies" rows="6"></textarea>
       </div>
-
     </div>
   </div>
 

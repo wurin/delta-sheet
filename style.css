@@ -97,7 +97,6 @@ label {
   white-space: nowrap;
 }
 
-.ability-scores,
 .misc-stats {
   display: grid;
   grid-template-columns: 3.5em 1fr;
@@ -105,13 +104,36 @@ label {
   align-items: center;
 }
 
+.ability-scores,
 .character-info {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.ability-scores h2,
+.combat-hp,
+.currency {
+  display: flex;
+  flex-direction: column;
+}
+
+.ability-scores .field-row + .field-row,
+.currency .field-row + .field-row,
+.combat-hp .field + .field {
+  margin-top: 8px;
+}
+
+.ability-scores input[type="text"].mod {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.ability-scores input[type="text"]:not(.mod) {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
 .misc-stats h2 {
   grid-column: 1 / -1;
 }
@@ -128,7 +150,6 @@ label {
 .skills h2 {
   grid-column: 1 / -1;
 }
-
 
 input:not([type="checkbox"]) {
   width: 100%;
@@ -198,7 +219,6 @@ input[type="checkbox"]:checked::after {
 }
 
 .attacks input {
-  width: 100%;
   min-width: 0;
   border: none;
 }
@@ -237,7 +257,6 @@ input[type="text"]:focus {
 
 .field input[type="text"] {
   font-size: 1.8rem;
-  width: 100%;
 }
 
 .field label {
