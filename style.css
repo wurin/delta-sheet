@@ -1,0 +1,263 @@
+@font-face {
+  font-family: 'MedievalSharp';
+  src: url('MedievalSharp-Regular.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+:root {
+  color-scheme: light dark;
+  font-size: 14px;
+  --border-color: #d0d0d0;
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'MedievalSharp', serif;
+}
+
+.character-info,
+.ability-scores,
+.misc-stats,
+.saving-throws,
+.skills,
+.combat-quick,
+.combat-hp,
+.combat-dice,
+.attacks,
+.currency,
+.inventory,
+.features,
+.proficiencies,
+.other {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.sheet-columns {
+  display: grid;
+  grid-template-columns: 5fr 6fr 5fr;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.column-left,
+.column-right {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-middle {
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-left .skills,
+.column-middle .inventory,
+.column-right .proficiencies {
+  flex-grow: 1;
+}
+
+.column-middle .inventory,
+.column-right .proficiencies {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-middle .inventory textarea,
+.column-right .proficiencies textarea {
+  flex-grow: 1;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 0.85rem;
+}
+
+.ability-scores label,
+.misc-stats label,
+.saving-throws label,
+.skills label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ability-scores,
+.misc-stats {
+  display: grid;
+  grid-template-columns: 3.5em 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ability-scores h2,
+.misc-stats h2 {
+  grid-column: 1 / -1;
+}
+
+.saving-throws,
+.skills {
+  display: grid;
+  grid-template-columns: auto 3.5em 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.saving-throws h2,
+.skills h2 {
+  grid-column: 1 / -1;
+}
+
+
+input:not([type="checkbox"]) {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.other textarea {
+  resize: vertical;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  background: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  border-color: transparent;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  display: block;
+  text-align: center;
+  line-height: 1.2em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.attacks {
+  overflow-x: auto;
+}
+
+.attacks table {
+  width: 100%;
+  min-width: 220px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.attacks .col-atk {
+  width: 20%;
+}
+
+.attacks th {
+  padding: 4px;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+.attacks td {
+  padding: 4px 6px;
+}
+
+.attacks input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+}
+
+.attacks textarea {
+  margin-top: 8px;
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  border-radius: 0;
+  outline: none;
+  padding: 1px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #555;
+}
+
+.field-row {
+  display: flex;
+  gap: 8px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field input[type="text"] {
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.field label {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.character-info .field input[type="text"],
+.currency .field input[type="text"] {
+  font-size: 1.1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+}

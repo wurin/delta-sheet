@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Sheet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="character-info">
+    <h2>Character Info</h2>
+    <div class="field-row">
+      <div class="field">
+        <input type="text" id="char-name">
+        <label for="char-name">Character Name</label>
+      </div>
+      <div class="field">
+        <input type="text" id="class-level">
+        <label for="class-level">Class &amp; Level</label>
+      </div>
+      <div class="field">
+        <input type="text" id="race">
+        <label for="race">Race</label>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <input type="text" id="background">
+        <label for="background">Background</label>
+      </div>
+      <div class="field">
+        <input type="text" id="alignment">
+        <label for="alignment">Alignment</label>
+      </div>
+      <div class="field">
+        <input type="text" id="xp">
+        <label for="xp">Experience Points</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-columns">
+    <div class="column-left">
+      <div class="ability-scores">
+        <h2>Ability Scores</h2>
+
+        <input type="text" id="str">
+        <label for="str">Strength</label>
+
+        <input type="text" id="dex">
+        <label for="dex">Dexterity</label>
+
+        <input type="text" id="con">
+        <label for="con">Constitution</label>
+
+        <input type="text" id="int">
+        <label for="int">Intelligence</label>
+
+        <input type="text" id="wis">
+        <label for="wis">Wisdom</label>
+
+        <input type="text" id="cha">
+        <label for="cha">Charisma</label>
+      </div>
+
+      <div class="misc-stats">
+        <h2>Proficiency &amp; Perception</h2>
+
+        <input type="text" id="inspiration">
+        <label for="inspiration">Inspiration</label>
+
+        <input type="text" id="prof-bonus">
+        <label for="prof-bonus">Proficiency Bonus</label>
+
+        <input type="text" id="passive-perception">
+        <label for="passive-perception">Passive Wisdom (Perception)</label>
+      </div>
+
+      <div class="saving-throws">
+        <h2>Saving Throws</h2>
+
+        <input type="checkbox" id="save-str-prof">
+        <input type="text" id="save-str">
+        <label for="save-str-prof">Strength</label>
+
+        <input type="checkbox" id="save-dex-prof">
+        <input type="text" id="save-dex">
+        <label for="save-dex-prof">Dexterity</label>
+
+        <input type="checkbox" id="save-con-prof">
+        <input type="text" id="save-con">
+        <label for="save-con-prof">Constitution</label>
+
+        <input type="checkbox" id="save-int-prof">
+        <input type="text" id="save-int">
+        <label for="save-int-prof">Intelligence</label>
+
+        <input type="checkbox" id="save-wis-prof">
+        <input type="text" id="save-wis">
+        <label for="save-wis-prof">Wisdom</label>
+
+        <input type="checkbox" id="save-cha-prof">
+        <input type="text" id="save-cha">
+        <label for="save-cha-prof">Charisma</label>
+      </div>
+
+      <div class="skills">
+        <h2>Skills</h2>
+
+        <input type="checkbox" id="skill-acrobatics-prof">
+        <input type="text" id="skill-acrobatics">
+        <label for="skill-acrobatics-prof">Acrobatics (Dex)</label>
+
+        <input type="checkbox" id="skill-animal-handling-prof">
+        <input type="text" id="skill-animal-handling">
+        <label for="skill-animal-handling-prof">Animal Handling (Wis)</label>
+
+        <input type="checkbox" id="skill-arcana-prof">
+        <input type="text" id="skill-arcana">
+        <label for="skill-arcana-prof">Arcana (Int)</label>
+
+        <input type="checkbox" id="skill-athletics-prof">
+        <input type="text" id="skill-athletics">
+        <label for="skill-athletics-prof">Athletics (Str)</label>
+
+        <input type="checkbox" id="skill-deception-prof">
+        <input type="text" id="skill-deception">
+        <label for="skill-deception-prof">Deception (Cha)</label>
+
+        <input type="checkbox" id="skill-history-prof">
+        <input type="text" id="skill-history">
+        <label for="skill-history-prof">History (Int)</label>
+
+        <input type="checkbox" id="skill-insight-prof">
+        <input type="text" id="skill-insight">
+        <label for="skill-insight-prof">Insight (Wis)</label>
+
+        <input type="checkbox" id="skill-intimidation-prof">
+        <input type="text" id="skill-intimidation">
+        <label for="skill-intimidation-prof">Intimidation (Cha)</label>
+
+        <input type="checkbox" id="skill-investigation-prof">
+        <input type="text" id="skill-investigation">
+        <label for="skill-investigation-prof">Investigation (Int)</label>
+
+        <input type="checkbox" id="skill-medicine-prof">
+        <input type="text" id="skill-medicine">
+        <label for="skill-medicine-prof">Medicine (Wis)</label>
+
+        <input type="checkbox" id="skill-nature-prof">
+        <input type="text" id="skill-nature">
+        <label for="skill-nature-prof">Nature (Int)</label>
+
+        <input type="checkbox" id="skill-perception-prof">
+        <input type="text" id="skill-perception">
+        <label for="skill-perception-prof">Perception (Wis)</label>
+
+        <input type="checkbox" id="skill-performance-prof">
+        <input type="text" id="skill-performance">
+        <label for="skill-performance-prof">Performance (Cha)</label>
+
+        <input type="checkbox" id="skill-persuasion-prof">
+        <input type="text" id="skill-persuasion">
+        <label for="skill-persuasion-prof">Persuasion (Cha)</label>
+
+        <input type="checkbox" id="skill-religion-prof">
+        <input type="text" id="skill-religion">
+        <label for="skill-religion-prof">Religion (Int)</label>
+
+        <input type="checkbox" id="skill-sleight-of-hand-prof">
+        <input type="text" id="skill-sleight-of-hand">
+        <label for="skill-sleight-of-hand-prof">Sleight of Hand (Dex)</label>
+
+        <input type="checkbox" id="skill-stealth-prof">
+        <input type="text" id="skill-stealth">
+        <label for="skill-stealth-prof">Stealth (Dex)</label>
+
+        <input type="checkbox" id="skill-survival-prof">
+        <input type="text" id="skill-survival">
+        <label for="skill-survival-prof">Survival (Wis)</label>
+      </div>
+    </div>
+
+    <div class="column-middle">
+      <div class="combat-quick">
+        <h2>Combat</h2>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="ac">
+            <label for="ac">Armor Class</label>
+          </div>
+          <div class="field">
+            <input type="text" id="initiative">
+            <label for="initiative">Initiative</label>
+          </div>
+          <div class="field">
+            <input type="text" id="speed">
+            <label for="speed">Speed</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="combat-hp">
+        <h2>Hit Points</h2>
+        <div class="field">
+          <input type="text" id="hp-max">
+          <label for="hp-max">Maximum</label>
+        </div>
+        <div class="field">
+          <input type="text" id="hp-current">
+          <label for="hp-current">Current</label>
+        </div>
+        <div class="field">
+          <input type="text" id="hp-temp">
+          <label for="hp-temp">Temporary</label>
+        </div>
+      </div>
+
+      <div class="combat-dice">
+        <h2>Hit Dice</h2>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="hit-dice">
+            <label for="hit-dice">Remaining</label>
+          </div>
+          <div class="field">
+            <input type="text" id="hit-dice-total">
+            <label for="hit-dice-total">Total</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="attacks">
+        <h2>Attacks &amp; Spellcasting</h2>
+
+        <table>
+          <colgroup>
+            <col>
+            <col class="col-atk">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Atk Bonus</th>
+              <th>Damage/Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" id="attack-1-name"></td>
+              <td><input type="text" id="attack-1-bonus"></td>
+              <td><input type="text" id="attack-1-damage"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="attack-2-name"></td>
+              <td><input type="text" id="attack-2-bonus"></td>
+              <td><input type="text" id="attack-2-damage"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="attack-3-name"></td>
+              <td><input type="text" id="attack-3-bonus"></td>
+              <td><input type="text" id="attack-3-damage"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="attack-4-name"></td>
+              <td><input type="text" id="attack-4-bonus"></td>
+              <td><input type="text" id="attack-4-damage"></td>
+            </tr>
+            <tr>
+              <td><input type="text" id="attack-5-name"></td>
+              <td><input type="text" id="attack-5-bonus"></td>
+              <td><input type="text" id="attack-5-damage"></td>
+            </tr>
+          </tbody>
+        </table>
+        <textarea id="attack-notes" rows="6"></textarea>
+      </div>
+
+      <div class="currency">
+        <h2>Currency</h2>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="cp">
+            <label for="cp">CP</label>
+          </div>
+          <div class="field">
+            <input type="text" id="sp">
+            <label for="sp">SP</label>
+          </div>
+          <div class="field">
+            <input type="text" id="ep">
+            <label for="ep">EP</label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <input type="text" id="gp">
+            <label for="gp">GP</label>
+          </div>
+          <div class="field">
+            <input type="text" id="pp">
+            <label for="pp">PP</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="inventory">
+        <h2>Inventory</h2>
+        <textarea id="inventory" rows="8"></textarea>
+      </div>
+    </div>
+
+    <div class="column-right">
+      <div class="features">
+        <h2>Features &amp; Traits</h2>
+        <textarea id="features" rows="48"></textarea>
+      </div>
+
+      <div class="proficiencies">
+        <h2>Other Proficiencies &amp; Languages</h2>
+        <textarea id="proficiencies" rows="6"></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="other">
+    <h2>Other</h2>
+    <textarea id="notes" rows="8"></textarea>
+  </div>
+</body>
+</html>
