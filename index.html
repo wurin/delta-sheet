@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="lock-toggle" type="button">Lock Sheet</button>
+  <div class="toolbar">
+    <button id="lock-toggle" type="button">Lock</button>
+    <button id="save-button" type="button" class="hidden">Save</button>
+    <button id="revert-button" type="button" class="hidden">Revert</button>
+  </div>
 
   <div class="character-info">
     <h2>Character Info</h2>
@@ -345,6 +349,26 @@
   <div class="other">
     <h2>Other</h2>
     <textarea id="notes" rows="8"></textarea>
+  </div>
+
+  <div class="toolbar">
+    <button id="export-button" type="button">Export</button>
+    <button id="import-button" type="button">Import</button>
+    <input type="file" id="import-input" accept="application/json" class="hidden">
+    <button id="clear-button" type="button">Clear</button>
+  </div>
+
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <label for="edit-modal-input">Value</label>
+      <input type="text" id="edit-modal-input">
+      <label for="edit-modal-notes">Notes</label>
+      <textarea id="edit-modal-notes" rows="6"></textarea>
+      <div class="modal-actions">
+        <button type="button" id="edit-modal-ok">OK</button>
+        <button type="button" id="edit-modal-cancel">Cancel</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
