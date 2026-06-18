@@ -136,7 +136,6 @@ label {
 
 .ability-scores input[type="text"]:not(.mod) {
   font-size: 1rem;
-  opacity: 0.8;
 }
 
 .misc-stats h2 {
@@ -250,6 +249,7 @@ input[type="text"]:focus {
 
 input:disabled,
 textarea:disabled {
+  opacity: 1 !important;
   color: inherit;
   -webkit-text-fill-color: inherit;
 }
